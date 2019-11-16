@@ -20,7 +20,14 @@ route::get('/testing',function(){
     echo "This is testing";
 });
 
-
-Auth::routes(['register'=>false]);
+Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+route::get('/blogs','BlogController@index')->name('blogs.index');
+
+route::get('/blogs/create','BlogController@create')->name('blogs.create');
+
+route::post('/blogs/create','BlogController@store')->name('blogs.store');
+
+
