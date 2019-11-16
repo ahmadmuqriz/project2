@@ -35,16 +35,17 @@
                                         <td>{{ $blog->title}}</td>
                                         <td>{{ $blog->created_at->diffForHumans()}}</td>
                                         <td>
-                                            <a href="" class="btn btn-primary">Edit</a>
-                                            <a href="" class="btn btn-danger"
-                                               onclick="return confirm('Are you sure?')">Delete</a>
+                                            <a href="{{route('blogs.show',$blog)}}" class="btn btn-success">Show</a>
+                                            <a href="{{route('blogs.edit',$blog)}}" class="btn btn-primary">Edit</a>
+                                            <a href="{{route('blogs.padam',$blog)}}" class="btn btn-danger">Delete</a>
+
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
                             {{$blogs->links()}}
-                        You are logged in!
+{{--                        You are logged in!--}}
                     </div>
                 </div>
             </div>

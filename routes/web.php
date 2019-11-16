@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
 route::get('/testing',function(){
     echo "This is testing";
 });
@@ -29,5 +28,14 @@ route::get('/blogs','BlogController@index')->name('blogs.index');
 route::get('/blogs/create','BlogController@create')->name('blogs.create');
 
 route::post('/blogs/create','BlogController@store')->name('blogs.store');
+
+
+route::get('/blogs/show/{blog}','BlogController@show')->name('blogs.show');
+
+route::get('/blogs/edit/{blog}','BlogController@edit')->name('blogs.edit');
+
+route::post('/blogs/edit/{blog}','BlogController@update')->name('blogs.update');
+
+route::get('blogs/delete/{blog}','BlogController@padam')->name('blogs.padam');
 
 
